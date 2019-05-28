@@ -26,8 +26,8 @@ startup of Docker workers)
 
 **Prepare:**
 
-1. create users/groups as defined in ``src/config.cfg`` under section
-   ``[USERS]``
+1. create user/group as defined in ``src/config.cfg`` under section
+   ``[USERS]`` on host system
 2. build docker images: ``./build_docker_images.sh``
 3. start redis/rq server: ``./run_redis.sh``
 
