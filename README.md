@@ -7,7 +7,7 @@
 **Problem**: does not scale well (manual startup/setup  of additional EC2 instances,
 startup of Docker workers)
 
-**Solution**: use AWS Fargate!
+**Solution**: use AWS ECS/Fargate or similar!
 
 ## current workflow
 
