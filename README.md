@@ -26,10 +26,11 @@ startup of Docker workers)
 
 **Prepare:**
 
+0. have docker installed and ready
 1. create user/group as defined in ``src/config.cfg`` under section
    ``[USERS]`` on host system
 2. build docker images: ``./build_docker_images.sh``
-3. start redis/rq server: ``./run_redis.sh``
+3. start redis/rq server and create docker network: ``./run_redis.sh``
 
 **Then, add jobs:**
 
@@ -80,7 +81,7 @@ and the actual job code is mounted into each worker container.
 *  ``enter_shell.sh``: run additional docker worker instance and start bash
    shell. This is necessary to be able to add the job to the queue from exactly
    the same environment as from where it is executed afterwards.
-* ``run_redis.sh``: start redis server in a Docker container
+* ``run_redis.sh``: tries to create docker network and start redis server in a Docker container
 * ``run_process_worker.sh``: run arbitrary number of workers in background or
   one worker interactively.
 *  ``stop_process_worker.sh``: stop worker container(s)
