@@ -7,11 +7,12 @@
 
 source read_config.sh src/config.cfg
 
-echo "${D_USERNAME}":"${D_GROUP}"
-echo "${D_UID}":"${D_GID}"
+echo "${D_USERNAME} (${D_UID})"
+echo "${D_GROUP} (${D_GID})"
 
 #  build worker
 docker build -t ${DI_WORKER} \
+	--no-cache \
 	--build-arg USERNAME=${D_USERNAME} \
 	--build-arg UID=${D_UID} \
 	--build-arg GROUP=${D_GROUP} \
@@ -19,7 +20,9 @@ docker build -t ${DI_WORKER} \
 	worker/Dockerfile/
 
 
-docker build -t ${DI_REDIS} docker-rq/server
+docker build -t ${DI_REDIS} \
+	--no-cache \
+	docker-rq/server
 
 
 

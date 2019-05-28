@@ -41,8 +41,6 @@ for (( i=$start_nr; i<=$end_nr; i++ ))
 do
 	docker run --rm $flag \
 		--user ${D_UID}:${D_GID} \
-		--memory=10g \
-		--oom-kill-disable \
 		--network ${DOCKER_NETWORK_NAME} \
 		--name ${DC_WORKER}_$i \
 		${MOUNT_DIRS} \

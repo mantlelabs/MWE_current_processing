@@ -26,7 +26,8 @@ startup of Docker workers)
 
 **Prepare:**
 
-0. have docker installed and ready
+0. have docker installed and ready; clone this repository: ``git clone
+   https://github.com/mantlelabs/MWE_current_processing.git``
 1. create user/group as defined in ``src/config.cfg`` under section
    ``[USERS]`` on host system
 2. build docker images: ``./build_docker_images.sh``
@@ -43,6 +44,7 @@ startup of Docker workers)
 **Finally, run a worker interactively to see output:**
 
 1. ``./run_process_worker.sh 1 1 -it``
+2. quit with ``Ctrl+d``
 
 In reality, we start the workers in the background and more than one in
 parallel
